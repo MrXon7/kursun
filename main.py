@@ -5,7 +5,19 @@ from btns import kb1,ikb1,kb2,remuv,akb1
 from database import add_id,conn,malumot_olish,add_fish,add_num,add_yonalish,db_clear,ids
 
 try:
+    import requests
     Token_API='6265160696:AAGL-TEJfAoYE1cunQ3uRjUQeR4J_AiMWSA'
+    github_pages_url = 'https://mrxon7.github.io/kursun/'
+
+    webhook_url = f'https://api.telegram.org/bot{Token_API}/setWebhook?url={github_pages_url}'
+
+    response = requests.get(webhook_url)
+    if response.status_code == 200:
+        print('Webhook URL has been set successfully.')
+    else:
+        print('Failed to set webhook URL.')
+
+    
 
     bot=Bot(Token_API)
     dp=Dispatcher(bot)
