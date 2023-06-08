@@ -56,16 +56,7 @@ try:
         conn   
         global T
         T=0
-        import requests
-        github_pages_url = 'https://mrxon7.github.io/kursun/'
-
-        webhook_url = f'https://api.telegram.org/bot{Token_API}/setWebhook?url={github_pages_url}'
-
-        response = requests.get(webhook_url)
-        if response.status_code == 200:
-            print('Webhook URL has been set successfully.')
-        else:
-            print('Failed to set webhook URL.')
+        
 
  # _________________________________________________________Adminlar uchun___________________________________________________
 
@@ -174,13 +165,6 @@ try:
         await message.answer(text=f"Siz Muvaffaqiyat ro'yxatdan o'tdingiz. Guruh to'lishi bilan o'zimiz sizga aloqaga chiqamiz",
                             reply_markup=remuv)
     
-
-   
-
-
-
-
-
 
     if __name__=='__main__':
         executor.start_polling(dispatcher=dp,
